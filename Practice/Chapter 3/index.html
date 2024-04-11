@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chapter 5</title>
+</head>
+<body>
+  <p id="name-display"></p>
+  <script>
+    const name = 'Sidra Sajjad';
+    document.querySelector('#name-display').innerText = name;
+    const GSTper = 18;
+    let cartValue =Math.round(((15599-(10/100*15599))-272 + (2499- (41/100*2499))-29 +25 +20) * (100 + GSTper) / 100);
+     let bagSummary =`Your final Myntra Bag Amount is Rs. ${cartValue}`;
+     alert(bagSummary);
+     console.log(eval('2+3+5*7-9'));
+  </script>
+</body>
+</html>

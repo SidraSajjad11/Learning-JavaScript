@@ -1,0 +1,15 @@
+.button1{
+  height: 30px;
+  width: 100px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  background-color: lightgreen;
+  border: none;
+}
+.button{
+  height: 30px;
+  width: 100px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: solid black 2px;
+}

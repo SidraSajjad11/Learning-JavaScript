@@ -1,0 +1,6 @@
+console.log('My first JavaScript Program');
+console.log(25*5);
+console.log('Good Morning! ' + 'Pakistan');
+console.warn('This is a warning');
+console.error('Stop this. This Is an Error');
+document.querySelector('#Click-me').click();
