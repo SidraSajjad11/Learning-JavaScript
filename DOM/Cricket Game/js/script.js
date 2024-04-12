@@ -1,11 +1,20 @@
-let score = {
-  win : 0,
-  tie : 0,
-  lost : 0,
-  displayScore: function () {
-    return `Won: ${score.win}, Tie: ${score.tie}, Lost: ${score.lost}`;  
-  }
+let scoreStr = localStorage.getItem('Score');
+let score;
+resetScore(scoreStr);
+function resetScore(scoreStr) {
+  score = scoreStr ? JSON.parse(scoreStr) : {
+    win : 0,
+    tie : 0,
+    lost : 0,
 };
+score.displayScore = function() {
+  return `Score:Won:${score.win}, Tie:${score.tie}, Lost: ${score.lost}`;
+};
+showResult();
+
+}
+
+
 // Computer Choice
 function generateComputerChoice() {
   let randomNumber = Math.random() * 3;
@@ -16,7 +25,6 @@ function generateComputerChoice() {
   } else{
     return 'Stump';
   }
-  return choice;
 }
 // User choices
 function getResult(userMove, computerMove) {
@@ -25,7 +33,7 @@ function getResult(userMove, computerMove) {
       score.win++;
       return 'User Won';
     } else if (computerMove === 'Bat'){
-      score.tie++
+      score.tie++;
       return `It's a tie`;
     } else if (computerMove === 'Stump'){
       score.lost++;
@@ -33,7 +41,7 @@ function getResult(userMove, computerMove) {
     }
   } else if (userMove === 'Ball') {
     if (computerMove === 'Ball') {
-      score.tie++
+      score.tie++;
       return `It's a tie`; 
     } else if (computerMove === 'Bat') {
       score.lost++;
@@ -50,7 +58,7 @@ function getResult(userMove, computerMove) {
       score.lost++;
       return 'Computer has Won';
     } else if (computerMove === 'Stump') {
-      score.tie++
+      score.tie++;
       return `It's a tie`;
     }
   }
@@ -58,9 +66,9 @@ function getResult(userMove, computerMove) {
 // show result
 function showResult(userMove, computerMove, result) {
   // console.log(ssore);
-  alert(`You have chosen ${userMove}.  Computer choice is ${computerMove} 
-  
-  ${result}
-  
-  ${score.displayScore()}`);
+  localStorage.setItem('Score', JSON.stringify(score));
+  document.querySelector('#user-move').innerText = userMove ? `You have chosen ${userMove}.` : '';
+  document.querySelector('#computer-move').innerText = computerMove  ? `Computer choice is ${computerMove}` : '';
+  document.querySelector('#result').innerText = result || '';
+  document.querySelector('#score').innerText = score.displayScore();
 }
