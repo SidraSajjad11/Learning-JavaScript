@@ -1,0 +1,48 @@
+let numbers = [1,4,4,3,5,7,8,9];
+console.log(numbers);
+console.log(numbers[0]);
+console.log(numbers[1]);
+console.log(numbers[2]);
+console.log(numbers[3]);
+console.log(numbers[4]);
+console.log(numbers[5]);
+console.log(numbers[6]);
+console.log(numbers[7]);
+console.log(numbers[8]);
+console.log(numbers.length);
+
+let doosra = [1, true, null, 'asdf'];
+console.log(doosra);
+console.log(doosra[0]);
+console.log(doosra[1]);
+console.log(doosra[2]);
+console.log(doosra[3]);
+console.log(typeof(doosra));
+console.log(doosra.length);
+
+let array =[1,2,3];
+console.log(array);
+array.push(5);
+console.log(array);
+array.shift();
+console.log(array);
+array.unshift(0);
+console.log(array);
+array.unshift(1);
+console.log(array);
+// console.log('poppes' + doosra.pop());
+// console.log(doosra);
+// console.log('poppes' + numbers.pop());
+// console.log(numbers);
+let arr = [1, 3, 5, 8, 7, 9];
+console.log(arr);
+arr.sort();
+// arr.splice(2, 2);
+console.log(arr);
+console.log(arr.valueOf());
+let arr2 = arr;
+arr2[0] = 99;
+console.log(arr);
+
+let [a, b, c, d] = arr;
+console.log(a + " " + b + " " + c + " " + d);
